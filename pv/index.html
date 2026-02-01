@@ -170,14 +170,13 @@ setTimeout(function () {
   ttq.track('Lead');
 }, 1320000); // 22 minutos
 </script>
- <script>
+<script>
 document.addEventListener('click', function (e) {
-  var el = e.target.closest('button, a');
-  if (!el) return;
+  var btn = e.target.closest('vturb-anchor-button');
 
-  var text = el.innerText.toLowerCase();
+  if (!btn) return;
 
-  if (text.includes('acheter maintenant')) {
+  if (btn.getAttribute('content') === 'ACHETER MAINTENANT') {
     ttq.track('InitiateCheckout');
   }
 });
@@ -186,8 +185,10 @@ document.addEventListener('click', function (e) {
 
 
 
+
 </body>
 </html>
+
 
 
 
