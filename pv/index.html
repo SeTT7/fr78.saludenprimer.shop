@@ -170,13 +170,25 @@ setTimeout(function () {
   ttq.track('Lead');
 }, 1320000); // 22 minutos
 </script>
+ <script>
+document.addEventListener('click', function (e) {
+  var el = e.target.closest('button, a');
+  if (!el) return;
 
+  var text = el.innerText.toLowerCase();
+
+  if (text.includes('acheter maintenant')) {
+    ttq.track('InitiateCheckout');
+  }
+});
+</script>
 
 
 
 
 </body>
 </html>
+
 
 
 
